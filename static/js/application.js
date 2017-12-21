@@ -1,0 +1,2 @@
+// DEFINE constants
+window.TripnScan = {};

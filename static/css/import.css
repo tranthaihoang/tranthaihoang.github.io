@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/* --------------------------------------------------
+	SiteName :
+	FileName : import.css
+	Description : import styles
+	Developer:
+-------------------------------------------------- */
+
+
+/* Fonts css */
+
+@import "font-awesome.min.css";
+@import "simple-line-icons.css";
+@import "Pe-icon-7-stroke.css";
+
+/*Plugin*/
+@import "baze.modal.css";
+
+/* css */
+@import "reset.css";
+@import "common.css";
+@import "popup.css";
+@import "style.css";
+@import "search.css";

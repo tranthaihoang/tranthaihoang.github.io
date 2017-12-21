@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Template">
+    <meta name="author" content="Template">
+    <title>QCode</title>
+    <link href="" rel="icon">
+    <link rel="stylesheet" type="text/css" href="../static/css/import.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../static/js/html5shiv.min.js"></script>
+      <script src="../static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<header class="header-mobile">
+	    <div class="logo"><a href="/"><img src="../static/images/logo.svg" alt="" /></a></div>
+	    <div class="nav f-02">
+	        <div class="item point">
+	            <a href="/" >
+	            	<span class="icon"></span>
+	            	<span class="text">Map</span>
+	            </a>
+	        </div>
+	        <div class="item search">
+	            <a href="/search">
+	            	<span class="icon"></span>
+	            	<span class="text">Search</span>
+	            </a>
+	        </div>
+	        <div class="item qcode">
+	            <a href="/qrcode" class="active">
+	            	<span class="icon"></span>
+	            	<span class="text">QR</span>
+	            </a>
+	        </div>
+	        <div class="item setting">
+	            <a href="/setting">
+	            	<span class="icon"></span>
+	            	<span class="text">Setting</span>
+	            </a>
+	        </div>
+	    </div>
+	</header>
+    <header class="header-desktop clearfix">
+         <div class="logo"><a href="/"><img src="../static/images/logo.svg" alt="" /></a></div>
+         <div class="nav">
+            <div class="item point">
+                <a href="/map">
+                    <span class="icon"></span>
+                    <span class="text">Map</span>
+                </a>
+            </div>
+            <div class="item search">
+                <a href="/search">
+                    <span class="icon"></span>
+                    <span class="text">Search</span>
+                </a>
+            </div>
+            <div class="item qcode">
+                <a href="/qrcode"  class="active">
+                  <span class="icon"></span>
+                  <span class="text">QR</span>
+                </a>
+            </div>
+            <div class="item setting">
+                <a href="/setting">
+                    <span class="icon"></span>
+                    <span class="text">Setting</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section role="video">
+         <h2 style="display: none" id="message"></h2>
+         <div class="videobox">
+            <div class="shape-qr"></div>
+            <div class="videobox__inner">
+                <video id="video" autoplay playsinline ></video>
+            </div>
+         </div>
+        <canvas id="qr-canvas" width="800" height="600"></canvas>
+    </section>
+
+	<footer>
+		<div class="logo"><a href=""><img src="../static/images/logo.svg" alt="" /></a></div>
+		Copyright © 2016 JaQool,Inc.<br> All rights reserved.
+	</footer>
+	<script src="../static/js/jquery-3.2.1.min.js"></script>
+	<script src="../static/js/mobile-detect.min.js"></script>
+	<script src="../static/js/main.js"></script>
+
+
+    <style>
+        .videobox{
+            text-align: center;
+            position: relative;
+        }
+        .videobox .shape-qr{
+
+        }
+        .videobox__inner{
+            display: inline-block;
+        }
+         #video{
+            width: 100%;
+            height: 100%;
+        }
+        #qr-canvas{
+            display: none;
+        }
+        html{
+            overflow-x: hidden;
+        }
+        #message{
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <!-- production mode will uglify all js file-->
+    <script type="text/javascript" src="../static/js/qr-code/grid.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/version.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/detector.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/formatinf.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/errorlevel.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/bitmat.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/datablock.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/bmparser.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/datamask.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/rsdecoder.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/gf256poly.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/gf256.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/decoder.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/qrcode.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/findpat.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/alignpat.js"></script>
+    <script type="text/javascript" src="../static/js/qr-code/databr.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var md = new MobileDetect(window.navigator.userAgent);
+            var medias = { audio : false, video : {
+                    // facingMode : {
+                    //     exact : "environment" // rear camera
+                    // }
+                }},
+                video  = document.getElementById("video"),
+                canvas = document.getElementById("qr-canvas"),
+                ctx    = canvas.getContext("2d");
+
+            /**
+             * isFound : has found qr code result
+             * @type {boolean}
+             */
+            var isFound = false;
+            /**
+             * readQRCode
+             * @param result
+             */
+            function readQRCode(result) {
+                if(result.indexOf("http://") === 0 || result.indexOf("https://") === 0)
+                    {
+                        if(!isFound)
+                        {
+                            alert(result);
+                            window.location.href = result.toString();
+                            isFound = true;
+                        }
+                    }
+            }
+            // set qr code result to readQRCode fn
+            qrcode.callback = readQRCode;
+            //draw canvas
+            requestAnimationFrame(draw);
+            // set video stream
+            function successCallback(stream) {
+                video.srcObject = stream;
+            }
+            // error on video stream
+            function errorCallback(err) {
+                $("#message").text(err.name).show();
+            }
+
+            /**
+             * draw video to canvas
+             */
+            function draw() {
+                ctx.drawImage(video, 0, 0);
+                try{
+                    setTimeout(function () {
+                        try{
+                            //try to decode from image
+                            qrcode.decode();
+                        }catch (ex){
+                            console.log(ex);
+                        }
+                        requestAnimationFrame(draw);
+                    },500)
+                }catch (e){
+                }
+            }
+
+            /**
+             * get video from camera
+             */
+            function scan() {
+                try{
+                    navigator.getUserMedia(medias, successCallback, errorCallback);
+                }catch (err){
+                    console.log(err);
+                    $("#message").text(JSON.stringify(err)).show();
+                }
+            }
+            if (md.mobile()) {
+                scan();
+
+            }else {
+               $("#message").text('Only work on mobile').show();
+            }
+        });
+    </script>
+</body>
+</html>

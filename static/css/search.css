@@ -1,0 +1,16 @@
+ul.list-search-results li{
+  color: red;
+}
+
+.search-result__read-more {
+	color: #f5ae3b;
+	text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.search-result__read-more:after {
+	content: "\f107";
+	font-family:'FontAwesome';
+	display: block;
+}
