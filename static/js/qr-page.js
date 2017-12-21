@@ -2,9 +2,9 @@ $(document).ready(function() {
 
             var md = new MobileDetect(window.navigator.userAgent);
             var medias = { audio : false, video : {
-                    // facingMode : {
-                    //     exact : "environment" // rear camera
-                    // }
+                    facingMode : {
+                        exact : "environment" // rear camera
+                    }
                 }},
                 video  = document.getElementById("video"),
                 canvas = document.getElementById("qr-canvas"),
