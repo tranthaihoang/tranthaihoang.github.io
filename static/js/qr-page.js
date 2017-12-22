@@ -1,8 +1,8 @@
 $(document).ready(function() {
-
+            alert('test');
             var md = new MobileDetect(window.navigator.userAgent);
             var medias = { audio : false, video : {
-                 width: $(document).width(),
+                   width: $(document).width(),
                     height: $(document).width(),
                     facingMode : {
                         exact : "environment" // rear camera
