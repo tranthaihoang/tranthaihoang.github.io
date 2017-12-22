@@ -1,5 +1,5 @@
 $(document).ready(function() {
-            alert('test2');
+            alert('test3');
             var md = new MobileDetect(window.navigator.userAgent);
             var medias = { audio : false, video : {
 
@@ -55,7 +55,7 @@ $(document).ready(function() {
                 var halfW = w/2;
                 var halfH = h/2;
                 $canvas.css('width',w).css('height',h);
-                ctx.drawImage(video, halfW, halfH, w ,h, 0,0,w*1.5,h);
+                ctx.drawImage(video, halfW, halfH, w ,h, 0,0,w*2,h);
                 // 10.4 W, 10.4 H
                 //
                 try{
