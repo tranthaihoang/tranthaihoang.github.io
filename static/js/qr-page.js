@@ -55,7 +55,7 @@ $(document).ready(function() {
                 var halfW = w/2;
                 var halfH = h/2;
                 $canvas.css('width',w).css('height',h);
-                ctx.drawImage(video, halfW, halfH, w * 2,h, 0,0,w,h);
+                ctx.drawImage(video, halfW, halfH, w ,h, 0,0,w*1.5,h);
                 // 10.4 W, 10.4 H
                 //
                 try{
