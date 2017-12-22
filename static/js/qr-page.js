@@ -4,9 +4,9 @@ $(document).ready(function() {
             var medias = { audio : false, video : {
                    width: $(document).width(),
                     height: $(document).width(),
-                    facingMode : {
-                        exact : "environment" // rear camera
-                    }
+                    // facingMode : {
+                    //     exact : "environment" // rear camera
+                    // }
                 }},
                 video  = document.getElementById("video"),
                 canvas = document.getElementById("qr-canvas"),
