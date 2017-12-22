@@ -2,7 +2,7 @@ $(document).ready(function() {
             alert('test2');
             var md = new MobileDetect(window.navigator.userAgent);
             var medias = { audio : false, video : {
-                    width: 320, height:320,
+
                     facingMode : {
                         exact : "environment" // rear camera
                     }
