@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    alert(10);
+    alert(11);
             var md = new MobileDetect(window.navigator.userAgent);
             var medias = { audio : false, video : {
 
