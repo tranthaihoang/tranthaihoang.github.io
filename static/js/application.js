@@ -1,2 +1,0 @@
-// DEFINE constants
-window.TripnScan = {};
