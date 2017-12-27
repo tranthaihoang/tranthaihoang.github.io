@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Futsal</title>
+	<link rel="icon" href="images/favicon.ico" type="image/gif">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/import.css">
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-main">
+            <a href="match-plan-choose-team.html" class="icon-left"><i class="fa fa-angle-left" aria-hidden="true"></i>Back</a>
+            <span class="title">Plan Info</span>
+        </div>
+    </header>
+	<main>
+     <div class="wrap-form">
+        <form action="" method="POST" role="form">
+          <div class="form-group">
+            <label for="">Start time <span class="required"><i class="fa fa-asterisk"></i></span></label>
+            <div class='input-group date' id='datetimepicker1'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="">Play time (minute) <span class="required"><i class="fa fa-asterisk"></i></span></label>
+            <input type="text" id="" placeholder="Play time">
+          </div>
+          <div class="form-group">
+            <label for="">Team size</label>
+            <input type="text" id="" placeholder="Team size">
+          </div>
+          <div class="form-group">
+            <label for="">Match fee</label>
+            <input type="text" id="" placeholder="Match fee">
+          </div>
+          <div class="form-group">
+            <label for="">Referee</label>
+            <input type="text" id="" placeholder="Referee">
+          </div>
+          <div class="bt-com fixed m-t-20"><a href="match-plan-info.html">Done</button></a>
+        </form>
+    </div>
+	</main>
+	<footer>
+
+	</footer>
+</body>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>
+</html>
