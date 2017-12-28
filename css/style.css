@@ -218,6 +218,7 @@ a:focus, a:hover{
 .name_author{
     font-size: 15px;
     font-weight:bold;
+    color: #000;
 }
 .post_location{
 	font-size: 10px;
@@ -229,9 +230,21 @@ a:focus, a:hover{
 .post_info span{
 	padding: 5px 10px;
 	cursor: pointer;
-	font-size: 12px;
+	font-size: 14px;
 }
-.post_info span i{
+.post_info span a{
+  color: #000;
+}
+.post_info span.active i{
+  color: #8ab300;
+}
+.post_info .view-like span{
+  font-size: 12px;
+  padding: 5px 0;
+  color: #000;
+}
+.post_info .view-like i{
+  font-size: 10px;
 }
 .main_img_post{
 	width: 100%;
@@ -876,7 +889,8 @@ a:focus, a:hover{
 	bottom: 0;
 	width: 100%;
 	padding: 10px;
-	background: rgba(255,255,255,0.8)
+	background: #F4F4F4;
+  position: fixed;
 }
 
 .wrap-input-chat .txt-chat {
@@ -888,7 +902,7 @@ a:focus, a:hover{
     float: left;
     font-style: italic;
     padding: 5px;
-    width: 87%;
+    width: 90%;
     outline: none;
 }
 
@@ -1255,3 +1269,66 @@ a:focus, a:hover{
   font-size: 10px;
 }
 
+.list-comment ul li{
+  display: flex;
+  margin-bottom: 20px;
+}
+.list-comment ul li .img{
+  width: 30px;
+  height: 30px;
+  flex-grow: 1;
+}
+
+.list-comment ul li .img img{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.list-comment ul li .content{
+  flex-grow: 10;
+  background: #F4F4F4;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  width: 75%;
+}
+
+.list-comment ul li .content a.name{
+  color: #000;
+  font-weight: bold;
+}
+
+.list-comment ul li .content .time{
+  font-size: 10px;
+  text-align: right;
+  display: block;
+  color: #B2B2B2;
+}
+.list-like-member ul li{
+  display: flex;
+  align-items: center;
+  padding:8px 10px;
+  border-bottom: 1px solid #efefef;
+}
+.list-like-member ul li .img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-grow: 1;
+}
+.list-like-member ul li .img img{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.list-like-member ul li .name{
+  flex-grow: 10;
+}
+.list-like-member ul li .name a{
+  color: #000;
+}
+.list-like-member ul li .chat a{
+  color: #8ab300;
+  font-size: 18px;
+}
