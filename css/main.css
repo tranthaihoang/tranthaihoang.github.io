@@ -3700,6 +3700,7 @@ margin-top: 82px;
 @media only screen and (max-width: 750px) {
   #scrollin{
     top: 15%;
+    letter-spacing: 1px;
   }
   .typeline{
     font-size: 14px;
@@ -3743,7 +3744,7 @@ margin-top: 82px;
   }
 
   #scrollin.mobgone {
-    letter-spacing: 8px;
+    letter-spacing: 1px;
     transition: all 1.4s;
     opacity: 0;
   }
