@@ -1,105 +1,655 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html class="no-js" lang="">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Futsal</title>
-	<link rel="icon" href="images/favicon.ico" type="image/gif">
-	<link rel="stylesheet" href="css/import.css">
+	<meta content="ie=edge" http-equiv="x-ua-compatible">
+	<title>Hopee</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="apple-touch-icon.png" rel="apple-touch-icon"><!-- Place favicon.ico in the root directory -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/simple-line-icons.css">
+<link rel="stylesheet" href="css/main.css">
+<link href="https://fonts.googleapis.com/css?family=Oswald:200,300" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="js/animsition.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+var classNames = [];
+if (navigator.userAgent.match(/(iPad|iPhone|iPod)/i)) classNames.push('device-ios');
+if (navigator.userAgent.match(/android/i)) classNames.push('device-android');
+
+var html = document.getElementsByTagName('html')[0];
+
+if (classNames.length) classNames.push('on-device');
+if (html.classList) html.classList.add.apply(html.classList, classNames);
+</script>
+<script>
+   if (navigator.userAgent.indexOf('Safari') != -1 &&
+       navigator.userAgent.indexOf('Chrome') == -1) {
+           document.body.className += " safari";
+       }
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-55446290-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-55446290-1');
+</script>
+
+
+</head>
+	<script>
+	 $(document).ready(function() {
+	   $(".animsition").animsition({
+	       inClass: 'fade-in',
+	       outClass: 'fade-out',
+	       inDuration: 800,
+	       outDuration: 800,
+	       linkElement: '.animsition-link',
+	       // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+	       loading: true,
+	       loadingParentElement: 'body', //animsition wrapper element
+	       loadingClass: 'animsition-loading',
+	       loadingInner: '', // e.g '<img src="loading.svg" />'
+	       timeout: true,
+	       timeoutCountdown: 3000,
+	       onLoadEvent: true,
+	       browser: ['animation-duration', '-webkit-animation-duration'],
+	       // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+	       // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+	       overlay: false,
+	       overlayClass: 'animsition-overlay-slide',
+	       overlayParentElement: 'body',
+	     })
+	     .one('animsition.inEnd', function() {
+	       $('body').addClass('loaded');
+	       var typed = new Typed('.typeline', {
+	         strings: ["Web application development", "by Ruby on Rail, .Net, PHP, Java", "Web application development"," by variable Javascript Framework","Smartphone application development"," by Objective-C, Swiff, Java, Ionic... ", "Smartphone game development"," by Unity"],
+	         typeSpeed: 50,
+           backSpeed: 50,
+           backDelay: 500,
+	         fadeOut: true,
+	         startDelay: 2000,
+	         fadeOutClass: 'typed-fade-out',
+	         fadeOutSpeed: 100,
+           loop: true,
+           loopCount: false,
+	       });
+	     });
+	 });
+	</script>
 </head>
 <body>
-    <header>
-        <div class="header-main">
-            <a href="post-status.html" class="icon-left"><i class="fa fa-pencil-square-o"></i></a>
-            <span class="title">Timeline</span>
-            <a href="notify.html" class="icon-right"><i class="fa fa-bell-o" aria-hidden="true"></i>
-                <span class="number">1</span>
-            </a>
-        </div>
-    </header>
-	<main>
-		<div class="wrap p-10">
-			<!-- Post -->
-			<article class="post">
-                <div class="post_user">
-                    <img class="img_avt" src="images/graphics/user_avatar.jpg"></img>
-                    <div class="info">
-                    	<a href="my-profile.html" class="name_author">Nguyễn Thành Đô</a>
-                        <p class="post_location">1 hours ago</p>
-                    </div>
-                    <div class="control">
-                    	<i class="icon-options icons"></i>
-                    </div>
-                </div>
-                <div class="post_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    <img class="m-t-10" src="images/posts/post-1.jpg" alt="">
-                </div>
-                <div class="post_info clearfix">
-                    <div class="pull-left">
-                        <span class="active"><i class="icon-like icons"></i> 12</span>
-                        <span><a href="post-comment.html"><i class="icon-bubble icons"></i> 1k</a></span>
-                    </div>
-                </div>
-            </article>
-            <!-- End post -->
-            <!-- Post -->
-			<article class="post">
-                <div class="post_user">
-                    <img class="img_avt" src="images/graphics/user_avatar.jpg"></img>
-                    <div class="info">
-                    	<a href="my-profile.html" class="name_author">Trần Thái Hoàng</a>
-                        <p class="post_location">10 hours ago</p>
-                    </div>
-                    <div class="control">
-                    	<i class="icon-options icons"></i>
-                    </div>
-                </div>
-                <div class="post_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </div>
-                <div class="post_info">
-                    <span><i class="icon-like icons"></i> 11</span>
-                    <span><a href="post-comment.html"><i class="icon-bubble icons"></i> 99</a></span>
-                </div>
-            </article>
-            <!-- End post -->
-            <!-- Post -->
-            <article class="post">
-                <div class="post_user">
-                    <img class="img_avt" src="images/graphics/user_avatar.jpg"></img>
-                    <div class="info">
-                        <a href="my-profile.html" class="name_author">Thịn 3D</a>
-                        <p class="post_location">10 hours ago</p>
-                    </div>
-                    <div class="control">
-                        <i class="icon-options icons"></i>
-                    </div>
-                </div>
-                <div class="post_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-                    <img class="m-t-10" src="images/posts/post-2.jpg" alt="">
-                </div>
-                <div class="post_info">
-                    <span><i class="icon-like icons"></i> 1k</span>
-                    <span><a href="post-comment.html"><i class="icon-bubble icons"></i> 34k</a></span>
-                </div>
-            </article>
-            <!-- End post -->
+	<!-- Modal Project futsal -->
+	<div id="futsalModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header clearfix">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        	<div class="project-detail clearfix">
+        		<div class="img col-6">
+        			<img src="images/project/futsal-detail.jpg" alt="">
+        		</div>
+        		<div class="content col-6">
+        			<h3>Futsal App</h3>
+        			<p class="outline">Futsal App supplies the first reliable choice that helps players among teams set a football match rapidly and easily</p>
+							<p>
+								Development duration: 9/2017 - 2/2018 <br>
+								Paticipants:  6<br>
+								Techniques: IONIC, Android, iOS, Angular JS, PHP, Laravel<br>
+							</p>
+        		</div>
+        	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal futsal -->
+<!-- Modal Project hotelbookModal -->
+	<div id="hotelbookModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header clearfix">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        	<div class="project-detail clearfix">
+        		<div class="img col-6">
+        			<img src="images/project/hotel-detail.jpg" alt="">
+        		</div>
+        		<div class="content col-6">
+        			<h3>Hotel Booking</h3>
+        			<p class="outline">Booking hotel rooms is available on Hotel Booking</p>
+							<p>
+								Customer: Japanese corporation <br>
+								Development duration: 4/2017 - 8/2018 <br>
+								Paticipants:  3<br>
+								Techniques: Smarty, PHP 7, MySQL<br>
+							</p>
+        		</div>
+        	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal hotelbookModal -->
+<!-- Modal Project travelerModal -->
+	<div id="travelerModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header clearfix">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        	<div class="project-detail clearfix">
+        		<div class="img col-6">
+        			<img src="images/project/friends-detail.jpg" alt="">
+        		</div>
+        		<div class="content col-6">
+        			<h3>Traveler Friendly</h3>
+        			<p class="outline">Traveler Friendly supports online menu unable us pay cost by scanning QR code on smartphones</p>
+							<p>
+								Customer: Japanese corporation <br>
+								Development duration: 6/2017 - 12/2017 <br>
+								Paticipants:  2<br>
+								Techniques: Python, Javascript<br>
+							</p>
+        		</div>
+        	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal travelerModal -->
+<!-- Modal Project houseModal -->
+	<div id="houseModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header clearfix">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        	<div class="project-detail clearfix">
+        		<div class="img col-6">
+        			<img src="images/project/house-detail.jpg" alt="">
+        		</div>
+        		<div class="content col-6">
+        			<h3>Contruction Consulting</h3>
+        			<p class="outline">This is a project that consults construction and the lifestyle in this contruction.</p>
+							<p>
+								Customer: Japanese company<br>
+								Development duration: 5/2017 - 10/2017 <br>
+								Paticipants:  3<br>
+								Techniques: Ruby, MySQL, Rails<br>
+							</p>
+        		</div>
+        	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal houseModal -->
+<!-- Modal Project intershipModal -->
+	<div id="intershipModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header clearfix">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        	<div class="project-detail clearfix">
+        		<div class="img col-6">
+        			<img src="images/project/intership-detail.jpg" alt="">
+        		</div>
+        		<div class="content col-6">
+        			<h3>Internship  Manager</h3>
+        			<p class="outline">Trainee manages trainers easily through using Intership Manager App </p>
+							<p>
+								Customer: Japanese company <br>
+								Development duration: 4/2017 - 8/2018 <br>
+								Paticipants:  4<br>
+								Techniques: C#, .Net, SQL Server<br>
+							</p>
+        		</div>
+        	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal intershipModal -->
+<!-- Modal Project clothModal -->
+	<div id="clothModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header clearfix">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        	<div class="project-detail clearfix">
+        		<div class="img col-6">
+        			<img src="images/project/cloth-detail.jpg" alt="">
+        		</div>
+        		<div class="content col-6">
+        			<h3>Cloth Coordinate</h3>
+        			<p class="outline">This Cloth Coordinate collects all cloth styles in the world</p>
+							<p>
+								Customer: Japanes corporation<br>
+								Development duration: 6/2016 - 9/2016 <br>
+								Paticipants:  2<br>
+								Techniques: PHP, MySQL, HTML5<br>
+							</p>
+        		</div>
+        	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal clothModal -->
+<!-- Modal Project disasterModal -->
+	<div id="disasterModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header clearfix">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        	<div class="project-detail clearfix">
+        		<div class="img col-6">
+        			<img src="images/project/disaster-detail.jpg" alt="">
+        		</div>
+        		<div class="content col-6">
+        			<h3>Disaster App</h3>
+        			<p class="outline">The application allows us know disaster alerts and collects the victims together.</p>
+							<p>
+								Customer: Japanese company <br>
+								Development duration: 11/2017 - 1/2018 <br>
+								Paticipants:  2<br>
+								Techniques: Android, iOS<br>
+							</p>
+        		</div>
+        	</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal disasterModal -->
+	<div class="animsition">
+		<div id="logo"><img src="images/hopee.svg"></div>
+		<div id="stalk">
+			   <a href="https://www.facebook.com/hopeeVN" target="_blank">
+			      <svg class="social" id="facebook" height="20" width="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0"/></svg>
+			   </a>
+			</div>
+			<!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+		<!-- Add your site or application content here -->
+		<div id="sidebarwrapper">
+			<div id="sidebar">
+				<div class="hamburger" id="hamburger-2">
+					<span class="line"></span> <span class="line"></span>
+				</div>
+				<div class="sidebartitle introtitle">
+					 Intro
+				</div>
+				<div class="sidebartitle portfoliotitle">
+					 Projects
+				</div>
+				<div class="sidebartitle footertitle">
+					 About
+				</div>
+				<div id="menu">
+					<div class="menuitem">
+						<h2>Home</h2>
+						<h1 class="one"><a data-scroll="" href="#intro">Intro</a></h1>
+					</div>
+					<div class="menuitem">
+						<h2>Selected</h2>
+						<h1 class="two"><a data-scroll="" href="#portfolio">Projects</a></h1>
+					</div>
+					<div class="menuitem">
+						<h2>Find out</h2>
+						<h1 class="three"><a data-scroll="" href="#about">About</a></h1>
+					</div>
+				</div>
+			</div>
+		</div><!-- intro Slide -->
+		<div class="arrow"></div>
+		<div id="scrollin">
+			<div class="management-principle">
+					<div class="title-policy">
+							Management Principles
+					</div>
+					<div class="title-flow">
+							<div class="bracket">
+								{{
+							</div>
+							<div class="content">
+									目指せ日本流
+							</div>
+							<div class="bracket">
+								}}
+							</div>
+					</div>
+					<div class="principle-content">
+							<div class="title">
+									The precepts of the company
+							</div>
+							<div class="content">
+									<p>The customer is first</p>
+									<p>Build a long-term relationship</p>
+									<p>ビジネスの価値は伝える側が責任を持って伝えよう</p>
+							</div>
+					</div>
+					<div class="principle-content">
+							<div class="title">
+									Vision
+							</div>
+							<div class="content">
+									<p>Build the wonderfull society from the smallest things</p>
+							</div>
+					</div>
+			</div>	
 		</div>
-	</main>
-	<section>
-		<div class="menu-footer clearfix">
-			<ul>
-                <li><a href="index.html" class="active"><span class="icon"><i class="icon-home"></i></span></a></li>
-                <li><a href="chat-home.html"><span class="icon"><i class="icon-bubbles"></i><span class="number">1</span></span></a></li>
-                <li><a href="match-plan-home.html"><span class="icon"><i class="icon-calendar"></i></span></a></li>
-                <li><a href="team-list.html"><span class="icon"><i class="icon-people"></i></span></a></li>
-                <li><a href="menu.html"><span class="icon"><i class="icon-options"></i></span></a></li>
-            </ul>
-		</div>
-	</section>
-	<footer>
+		<section class="scroll-points" id="intro">
+			<div class="header">
+				<div id="portfolio-of">
+					<span class="preintro">The Service Of</span>
+				</div>
+				<div id="revealer_name">
+					<div class="reveal_name one"></div>
+					<div class="reveal_name two"></div>
+				</div>
+				<div id="fadeaway">
+					<h1 class="name" style='filter: url("#liquify");'>HOPEE</h1>
+					<h1 class="name2" style='filter: url("#liquify");'>VIET NAM</h1>
+				</div>
+				<div id="tagline">
+					<span class="typeline"></span>
+				</div>
+			</div>
+		</section>
+		<div class="spacer" id="spacer1"></div><!-- Portfolio Slide -->
+		<section class="scroll-points" id="portfolio">
+			<div id="portfoliointro">
+				<h1 class="portfolio_title">Selected Works</h1>
+				<h2 class="portfolio_subtitle">2015-<br>
+				2018</h2>
+			</div>
+			<div id="projects">
+				<!-- project start -->
+				<div class="project_container" id="futsal_app">
+					<div class="project_title">
+						<div class="reveal_title one"></div>
+						<div class="reveal_title two"></div>
+						<div class="project_pretitle">
+							<h4>Self Company Product</h4>
+						</div>
+						<h3 class="dirt">Futsal</h3>
+						<h3 class="days">App</h3>
+						<div class="linkcontainer" data-tilt="" data-tilt-max="30" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="5000" data-tilt-transition="true">
+							<a class="viewproject" data-toggle="modal" data-target="#futsalModal">View Detail</a>
+						</div>
+						<div class="descript-project collapse">
+									<p class="outline">Futsal App supplies the first reliable choice that helps players among teams set a football match rapidly and easil</p>
+									<p>
+										Development duration: 9/2017 - 2/2018 <br>
+										Paticipants:  6<br>
+										Techniques: IONIC, Android, iOS, Angular JS, PHP, Laravel<br>
+									</p>
+						</div>
+					</div>
+					<div class="project_scene dirtdays" data-tilt="" data-tilt-max="10" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="3000" data-tilt-transition="true">
+						<img class="project_content" src="images/project/futsal-iphone.png">
+						<div class="revealblock"></div>
+					</div>
+				</div><!-- project end -->
+				<!-- project start -->
+				<div class="project_container" id="asia">
+					<div class="project_title">
+						<div class="reveal_title one"></div>
+						<div class="reveal_title two"></div>
+						<div class="reveal_title three"></div>
+						<div class="project_pretitle">
+							<h4>EXTERNAL PROJECT</h4>
+						</div>
+						<h3 class="step">Hotel</h3>
+						<h3 class="inside">Booking</h3>
+						<h3 class="asiaa">Web</h3>
+						<div class="linkcontainer" data-tilt="" data-tilt-max="30" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="5000" data-tilt-transition="true">
+							<a class="viewproject" data-toggle="modal" data-target="#hotelbookModal">View Detail</a>
+						</div>
+					</div>
+					<div class="project_scene asia" data-tilt="" data-tilt-max="10" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="3000" data-tilt-transition="true">
+						<img class="project_content" src="images/project/hotel-imac.png">
+						<div class="revealblock"></div>
+					</div>
+				</div><!-- project end -->
+				<!-- project start -->
+				<div class="project_container" id="naturale">
+					<div class="project_title">
+						<div class="reveal_title one"></div>
+						<div class="reveal_title two"></div>
+						<div class="project_pretitle">
+							<h4>EXTERNAL PROJECT</h4>
+						</div>
+						<h3 class="naturalee">Traveler </h3>
+						<h3 class="brewery">Friendly</h3>
+						<div class="linkcontainer" data-tilt="" data-tilt-max="30" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="5000" data-tilt-transition="true">
+							<a class="viewproject" data-toggle="modal" data-target="#travelerModal">View Detail</a>
+						</div>
+					</div>
+					<div class="project_scene naturale" data-tilt="" data-tilt-max="10" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="3000" data-tilt-transition="true">
+						<img class="project_content" src="images/project/friends-iphone.png">
+						<div class="revealblock"></div>
+					</div>
+				</div><!-- project end -->
+				<!-- project start -->
+				<div class="project_container" id="sassi">
+					<div class="project_title">
+						<div class="reveal_title one"></div>
+						<div class="reveal_title two"></div>
+						<div class="reveal_title three"></div>
+						<div class="project_pretitle">
+							<h4>EXTERNAL PROJECTS</h4>
+						</div>
+						<h3 class="sas">Contrucsion</h3>
+						<h3 class="holford">Consulting</h3>
+						<div class="linkcontainer" data-tilt="" data-tilt-max="30" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="5000" data-tilt-transition="true">
+							<a class="viewproject" data-toggle="modal" data-target="#houseModal">View Detail</a>
+						</div>
+					</div>
+					<div class="project_scene sassi" data-tilt="" data-tilt-max="10" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="3000" data-tilt-transition="true">
+						<img class="project_content" src="images/project/house-item.png">
+						<div class="revealblock"></div>
+					</div>
+				</div><!-- project end -->
+				<!-- project start -->
+				<div class="project_container" id="internship">
+					<div class="project_title">
+						<div class="reveal_title one"></div>
+						<div class="reveal_title two"></div>
+						<div class="project_pretitle">
+							<h4>EXTERNAL PROJECTS</h4>
+						</div>
+						<h3 class="naturalee">Internship </h3>
+						<h3 class="brewery">Manager</h3>
+						<div class="linkcontainer" data-tilt="" data-tilt-max="30" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="5000" data-tilt-transition="true">
+							<a class="viewproject" data-toggle="modal" data-target="#intershipModal">View Detail</a>
+						</div>
+					</div>
+					<div class="project_scene internship" data-tilt="" data-tilt-max="10" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="3000" data-tilt-transition="true">
+						<img class="project_content" src="images/project/intern-ipad.png">
+						<div class="revealblock"></div>
+					</div>
+				</div><!-- project end -->
+				<!-- project start -->
+				<div class="project_container" id="dinate">
+					<div class="project_title">
+						<div class="reveal_title one"></div>
+						<div class="reveal_title two"></div>
+						<div class="reveal_title three"></div>
+						<div class="project_pretitle">
+							<h4>EXTERNAL PROJECTS</h4>
+						</div>
+						<h3 class="sas">Cloth</h3>
+						<h3 class="holford">Coordinate</h3>
+						<div class="linkcontainer" data-tilt="" data-tilt-max="30" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="5000" data-tilt-transition="true">
+							<a class="viewproject" data-toggle="modal" data-target="#clothModal">View Detail</a>
+						</div>
+					</div>
+					<div class="project_scene dinate" data-tilt="" data-tilt-max="10" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="3000" data-tilt-transition="true">
+						<img class="project_content" src="images/project/dinate-item.png">
+						<div class="revealblock"></div>
+					</div>
+				</div><!-- project end -->
+				<!-- project start -->
+				<div class="project_container" id="disaster">
+					<div class="project_title">
+						<div class="reveal_title one"></div>
+						<div class="reveal_title two"></div>
+						<div class="project_pretitle">
+							<h4>EXTERNAL PROJECTS</h4>
+						</div>
+						<h3 class="naturalee">Disaster </h3>
+						<h3 class="brewery">App</h3>
+						<div class="linkcontainer" data-tilt="" data-tilt-max="30" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="5000" data-tilt-transition="true">
+							<a class="viewproject" data-toggle="modal" data-target="#disasterModal">View Detail</a>
+						</div>
+					</div>
+					<div class="project_scene disaster" data-tilt="" data-tilt-max="10" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="3000" data-tilt-transition="true">
+						<img class="project_content" src="images/project/desaster-item.png">
+						<div class="revealblock"></div>
+					</div>
+				</div><!-- project end -->
+			</div>
+		</section>
+		<div class="spacer" id="spacer2"></div><!-- Footer Slide -->
+		<section class="scroll-points" id="footer">
+			<!-- Media 4 -->
+			<div id="about">
+				<div data-tilt="" data-tilt-max="30" data-tilt-perspective="1000" data-tilt-scale="1.1" data-tilt-speed="5000" data-tilt-transition="true" id="me_photo"><img id="me_face" src="images/hopee_team.png"></div>
+				<div id="aboutinner">
+					<h1>HOPEE COMPANY</h1>
+					<div class="content content--blended">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+					<div id="contacts">
+						<div class="info">
+							  <ul>
+							  	<li><i class="icons icon-home"></i><span>HOPEE Vietnam CO., LTD</span></li>
+							  	<li><i class="icons icon-location-pin"></i><span>Building 8, Rm 20, Quang Trung Software City, HCM City, VietNam.</span></li>
+							  	<li><i class="icons icon-phone"></i><span>(+84) 946824823</span></li>
+							  	<li><i class="icons icon-envelope"></i><span>lhphuoc@hopee.com.vn</span></li>
+							  </ul>
+						</div>
+						<div id="copyrightmob">
+							© 2018 HOPEE.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="copyright">
+				Copyright © HOPEE 2018
+			</div>
+		</section>
 
-	</footer>
+		<canvas id="noise"></canvas>
+		<canvas id="webgl"></canvas><svg class="safari_only" id="svgeffects">
+		<defs>
+			<filter class="safari_only" id="liquify">
+				<feturbulence basefrequency="0.015" numoctaves="3" result="warp" type="fractalNoise"></feturbulence>
+				<fedisplacementmap id="liquid" in="SourceGraphic" in2="warp" scale="0" xchannelselector="R" ychannelselector="B"></fedisplacementmap>
+			</filter>
+		</defs></svg>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/regl/1.3.0/regl.min.js">
+	</script>
+	<script id="fragmentShader" type="x-shader/x-fragment">
+	 #define TWO_PI 6.2831853072
+	 #define PI 3.14159265359
 
+	 precision highp float;
+
+	 uniform float globaltime;
+	 uniform vec2 resolution;
+	 uniform float aspect;
+	 uniform float scroll;
+	 uniform float velocity;
+	 uniform sampler2D texture;
+
+	 const float timescale = 0.02;
+	 const float twist = 1.0;
+
+	 vec2 rotate(vec2 v, float angle) {
+	   float c = cos(angle);
+	   float s = sin(angle);
+	   return v * mat2(c, -s, s, c);
+	 }
+
+	 float nsin(float value) {
+	   return sin(value * TWO_PI) * 0.5 + 0.5;
+	 }
+
+	 void main(void) {
+	   float time = globaltime * timescale;
+	   vec2 center = vec2(sin(TWO_PI * time * 0.2), cos(TWO_PI * time * 0.2)) * nsin(time * 0.3) * 0.5;
+	   vec2 tx = (gl_FragCoord.xy / resolution.xy - 0.5 - center) * vec2(aspect, 1.0);
+	   float len = 1.0 - length(tx);
+	   float zoom = 1.0 + scroll - len * 3.0 * (1.0 - scroll) + len * velocity * 2.0;
+
+	   vec4 imgColor = texture2D(
+	     texture,
+	     rotate(
+	       (tx + center) * vec2(1.0, -1.0) * zoom,
+	       twist * TWO_PI * nsin(len + time) * scroll + time
+	     ) + 0.5
+	   );
+
+	   gl_FragColor = imgColor;
+	 }
+	</script>
+	<script src="js/min/scroll_liquid.js">
+	</script> <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+<script src="js/CSSPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/AttrPlugin.min.js"></script>
+<script src="cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="js/animation.gsap.js"></script>
+<script src="js/smooth-scroll.js"></script>
+<script src="js/min/noise-min.js"></script>
+<script>
+var scroll = new SmoothScroll('a[href*="#"]', {
+
+	offset: 200 // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+
+});</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.4.1/dist/vanilla-tilt.min.js"></script>
+	<script src="js/homepage.js">
+	</script>
+	<script src="js/main.js">
+	</script>
+	<script src="js/mediahover.js">
+	</script>
+	<script src="js/typed.js">
+	</script>
+	<script>
+	   if (navigator.userAgent.indexOf('Safari') != -1 &&
+	       navigator.userAgent.indexOf('Chrome') == -1) {
+	           document.body.className += " safari";
+	       }
+	</script>
 </body>
 </html>
+
