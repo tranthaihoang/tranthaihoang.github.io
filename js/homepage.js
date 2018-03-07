@@ -199,7 +199,7 @@ new ScrollMagic.Scene({
       .addTo(controller);
 
 new ScrollMagic.Scene({
-    offset: 800
+    offset: 0
   })
   .setClassToggle("#logo", "loaded") // add class toggle
   .addTo(controller);
