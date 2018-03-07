@@ -1680,7 +1680,7 @@ h3 {
   width: 40%;
   position: relative;
   top: -140px;
-  transform-style: preserve-3d;
+  transform-style: flat;
 }
 
 #me_photo img {
