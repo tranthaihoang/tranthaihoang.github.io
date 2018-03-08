@@ -729,6 +729,11 @@ body.loaded #instagram {
   transition-delay: 2.8s;
 }
 
+.flag{
+  width: 20px;
+  margin-left: 5px;
+}
+
 .social {
   fill: #FFF;
   width: 14px;
